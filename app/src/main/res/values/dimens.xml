@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_elevation_default">8dp</dimen>
+    <dimen name="title_text_size">16sp</dimen>
+    <dimen name="text_padding_default">10dp</dimen>
+</resources>

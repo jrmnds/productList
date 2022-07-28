@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reviews">Reviews</string>
     <string name="price">Price:</string>
+    <string name="coolblue_s_n_choice">CoolBlue\'s \n Choice</string>
+    <string name="promotion">Promotion</string>
 </resources>

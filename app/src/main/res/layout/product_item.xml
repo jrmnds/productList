@@ -9,7 +9,7 @@
         android:id="@+id/product_card_id"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardElevation="8dp"
+        app:cardElevation="@dimen/card_elevation_default"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,6 +17,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/include_retail_promotion_id"
+                layout="@layout/retail_promotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/product_image_id"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
 
             <ImageView
                 android:id="@+id/product_image_id"
@@ -27,6 +39,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_image" />
 
+            <include
+                android:id="@+id/include_retail_choice_id"
+                layout="@layout/retail_choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/product_image_id"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:visibility="visible" />
+
             <TextView
                 android:id="@+id/product_name_id"
                 android:layout_width="wrap_content"
@@ -34,7 +60,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
-                android:textSize="16sp"
+                android:textSize="@dimen/title_text_size"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/product_image_id"
                 app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +76,7 @@
                 android:numStars="5"
                 app:layout_constraintStart_toEndOf="@+id/product_image_id"
                 app:layout_constraintTop_toBottomOf="@+id/product_name_id"
-                tools:rating="2.5" />
+                tools:rating="2.4" />
 
             <TextView
                 android:id="@+id/product_rating_reviews_id"
@@ -58,10 +84,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/product_ratingBar_id"
                 app:layout_constraintTop_toBottomOf="@+id/product_name_id"
+                style="@style/text_style_default"
                 tools:text="116" />
 
             <TextView
@@ -69,14 +94,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="12sp"
                 android:text="@string/reviews"
                 app:layout_constraintBaseline_toBaselineOf="@+id/product_rating_reviews_id"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/product_rating_reviews_id"
-                />
+                style="@style/text_style_default"/>
 
             <TextView
                 android:id="@+id/product_info_id"
@@ -84,14 +107,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/roboto"
                 android:textAlignment="center"
-                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/product_image_id"
                 app:layout_constraintTop_toBottomOf="@+id/product_ratingBar_id"
-                tools:text="4K (3840 x 2160), \n Geschikt voor Netflix, \n iTunes en Apple Music, \n App voor iOS" />
+                tools:text="4K (3840 x 2160), \n Geschikt voor Netflix, \n iTunes en Apple Music, \n App voor iOS"
+                style="@style/text_style_default" />
 
             <TextView
                 android:id="@+id/product_delivery_info_id"
@@ -100,17 +122,16 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:drawablePadding="5dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="12sp"
                 app:drawableStartCompat="@drawable/ic_baseline_bike_scooter"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintEnd_toStartOf="@+id/buy_image_button_id"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/product_image_id"
                 app:layout_constraintTop_toBottomOf="@+id/product_price_id"
+                style="@style/text_style_default"
                 tools:text="Delivered Tomorrow" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/buy_image_button_id"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -128,21 +149,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto"
                 android:text="@string/price"
-                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/product_image_id"
-                app:layout_constraintTop_toBottomOf="@+id/product_info_id" />
+                app:layout_constraintTop_toBottomOf="@+id/product_info_id"
+                style="@style/text_style_default"/>
 
             <TextView
                 android:id="@+id/product_price_info_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="12sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/product_price_id"
                 app:layout_constraintStart_toEndOf="@+id/product_previous_price_id"
+                style="@style/text_style_default"
                 tools:text="219" />
 
             <TextView
@@ -150,13 +169,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:fontFamily="@font/roboto"
-                android:textSize="12sp"
                 android:visibility="gone"
                 app:layout_constraintBaseline_toBaselineOf="@+id/product_price_id"
                 app:layout_constraintStart_toEndOf="@+id/product_price_id"
+                style="@style/text_style_default"
                 tools:text="350,"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/drawable/rect_primary_color_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/rect_secondaty_color_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/search_bar_background_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.5181623931623932" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.5945654350414611" />
+        <entry key="app/src/main/res/layout/retail_choice.xml" value="0.5171286320340807" />
+        <entry key="app/src/main/res/layout/retail_promotion.xml" value="0.24739583333333334" />
       </map>
     </option>
   </component>
