@@ -3,10 +3,11 @@ package com.jrmnds.productlist.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.jrmnds.productlist.common.GlideHelper.loadImage
+import com.bumptech.glide.Glide
 import com.jrmnds.productlist.databinding.ProductItemBinding
 import com.jrmnds.productlist.domain.model.Product
 import com.jrmnds.productlist.domain.model.PromoIcon
@@ -49,7 +50,7 @@ class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCa
                 reviewTotalCount(product.reviewInformation?.reviewSummary?.reviewCount)
                 productPrice(product.salesPriceIncVat)
                 hasPromotionPrice(product.listPriceIncVat)
-                loadImage(productImageId.context, product.productImage, productImageId)
+                loadImage(productImageId, product.productImage)
                 retailChoiceIconIsVisible(product.promoIcon)
                 retailPromotionIconIsVisible(product.promoIcon)
                 isNextDayDelivery(product.nextDayDelivery)
@@ -58,6 +59,12 @@ class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCa
                 productInfoLabels(product.productLabels)
             }
         }
+    }
+
+    private fun ProductItemBinding.loadImage(productImageId: ImageView, productImage: String) {
+        Glide.with(productImageId.context).load(productImage).into(
+            productImageId
+        ).waitForLayout()
     }
 
     private fun ProductItemBinding.productInfoLabels(productLabels: List<String>) {

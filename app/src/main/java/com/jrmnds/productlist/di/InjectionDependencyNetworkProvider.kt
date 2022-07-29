@@ -34,6 +34,4 @@ class InjectionDependencyNetworkProvider {
     fun provideMoshi(): Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
-
-
 }

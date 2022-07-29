@@ -7,4 +7,5 @@
     <string name="coolblue_s_n_choice">CoolBlue\'s \n Choice</string>
     <string name="promotion">Promotion</string>
     <string name="delivered_tomorrow">Delivered Tomorrow</string>
+    <string name="internet_connection_error">Sorry, it seems that you\'re without internet connection.\n Please, try again later.</string>
 </resources>
