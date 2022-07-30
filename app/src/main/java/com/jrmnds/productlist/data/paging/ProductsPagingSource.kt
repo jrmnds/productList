@@ -23,9 +23,11 @@ class ProductsPagingSource @Inject constructor(private val repository: ProductRe
         return try {
             val response = repository.getProducts(pageNumber).toPageInfo()
             var productList = response.productList
-            if(productName != null){
-               productList = productList.filter { product ->
-                    product.productName.contains(productName, ignoreCase = true)
+            when {
+                productName != null -> {
+                    productList = productList.filter { product ->
+                        product.productName.contains(productName, ignoreCase = true)
+                    }
                 }
             }
             val pageCount = response.pageCount

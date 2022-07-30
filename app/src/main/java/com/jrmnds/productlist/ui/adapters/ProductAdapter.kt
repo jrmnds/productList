@@ -1,16 +1,15 @@
 package com.jrmnds.productlist.ui.adapters
 
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.jrmnds.productlist.R
 import com.jrmnds.productlist.databinding.ProductItemBinding
 import com.jrmnds.productlist.domain.model.Product
 import com.jrmnds.productlist.domain.model.PromoIcon
@@ -110,7 +109,8 @@ class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCa
         productIcon: PromoIcon?
     ){
         when{
-            productIcon != null && productIcon.type.equals("coolblues-choice") -> {
+            productIcon != null && productIcon.type.equals(
+                includeRetailChoiceId.root.context.getString(R.string.coolsblue_choice_compare)) -> {
                 includeRetailChoiceId.root.visibility = View.VISIBLE
             }
         }
@@ -120,7 +120,8 @@ class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCa
         productIcon: PromoIcon?
     ){
         when{
-            productIcon != null && productIcon.type.equals("action-price") ->{
+            productIcon != null && productIcon.type.equals(
+                includeRetailPromotionId.root.context.getString(R.string.action_price_compare)) ->{
                 includeRetailPromotionId.root.visibility = View.VISIBLE
             }
         }

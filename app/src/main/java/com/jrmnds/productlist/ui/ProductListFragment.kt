@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class ProductListFragment : Fragment() {
 
-    private lateinit var _binding: FragmentProductListBinding
+    private lateinit var binding: FragmentProductListBinding
     private lateinit var productAdapter: ProductAdapter
     private lateinit var productLoadStateAdapter: PageLoadStateAdapter
     private lateinit var viewModel: ProductListViewModel
@@ -31,22 +31,23 @@ class ProductListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProductListBinding.inflate(layoutInflater)
+        binding = FragmentProductListBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[ProductListViewModel::class.java]
         productAdapter = ProductAdapter()
         productLoadStateAdapter = PageLoadStateAdapter()
         configureRecycle()
         observeState()
-        return _binding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         observeProducts()
         observeSearcher()
+        setCustomSearchClickArea()
     }
 
     private fun configureRecycle() {
-        _binding.productRecyclerViewId.apply {
+        binding.productRecyclerViewId.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = productAdapter.withLoadStateFooter(
@@ -67,8 +68,8 @@ class ProductListFragment : Fragment() {
         lifecycleScope.launch {
             productAdapter.loadStateFlow.collect { loadState ->
                 val isEmpty = loadState.source.refresh is LoadState.Error
-                _binding.connectionErroString.isVisible = isEmpty
-                _binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
+                binding.connectionErroString.isVisible = isEmpty
+                binding.progressBar.isVisible = loadState.source.refresh is LoadState.Loading
             }
         }
     }
@@ -92,7 +93,7 @@ class ProductListFragment : Fragment() {
     }
 
     private fun observeSearcher() {
-        _binding.searchProductId.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.searchProductId.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 callGetProductByName(p0)
                 return false
@@ -102,5 +103,10 @@ class ProductListFragment : Fragment() {
                 return false
             }
         })
+
+    }
+
+    private fun setCustomSearchClickArea() {
+        binding.searchProductId.setOnClickListener { binding.searchProductId.isIconified = false }
     }
 }

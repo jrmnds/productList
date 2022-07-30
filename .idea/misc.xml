@@ -10,7 +10,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/erro_page_loader.xml" value="0.4829781573751698" />
         <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.2894880767561432" />
-        <entry key="app/src/main/res/layout/product_item.xml" value="0.4759933471679688" />
+        <entry key="app/src/main/res/layout/page_state_item.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/product_item.xml" value="0.4474090576171875" />
         <entry key="app/src/main/res/layout/retail_choice.xml" value="0.5171286320340807" />
         <entry key="app/src/main/res/layout/retail_promotion.xml" value="0.24739583333333334" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.30833333333333335" />

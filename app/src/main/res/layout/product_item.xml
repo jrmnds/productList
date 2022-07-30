@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal_end_default_size"
                     android:fontFamily="@font/roboto"
                     android:textSize="@dimen/title_text_size"
                     android:textStyle="bold"
@@ -79,7 +79,7 @@
                     android:autoSizeMinTextSize="@dimen/min_text_size"
                     android:autoSizeMaxTextSize="@dimen/max_text_size"
                     android:autoSizeStepGranularity="1sp"
-                    tools:text="Apple TV 4K 64GB"
+                    tools:text="@string/tools_product_title"
                     tools:targetApi="o" />
 
                 <LinearLayout
@@ -87,8 +87,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal_end_default_size"
+                    android:layout_marginTop="@dimen/default_margin_top_size"
                     android:layout_gravity="center">
 
                     <RatingBar
@@ -104,15 +104,15 @@
                         style="@style/text_style_default"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        tools:text="116" />
+                        android:layout_marginStart="@dimen/default_margin_start_size"
+                        tools:text="@string/tools_review_count" />
 
                     <TextView
                         android:id="@+id/product_review_id"
                         style="@style/text_style_default"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="@dimen/default_margin_start_size"
                         android:text="@string/reviews" />
 
                 </LinearLayout>
@@ -123,21 +123,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal_end_default_size"
                     android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/default_margin_top_size"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMinTextSize="@dimen/min_text_size"
                     android:autoSizeMaxTextSize="@dimen/max_text_size"
                     android:autoSizeStepGranularity="1sp"
-                    tools:text="4K (3840 x 2160), \n Geschikt voor Netflix, \n iTunes en Apple Music, \n App voor iOS"
+                    tools:text="@string/tools_product_labels"
                     tools:targetApi="o" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="3"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="@dimen/default_margin_top_size">
 
                     <TextView
                         android:id="@+id/product_price_id"
@@ -153,10 +153,10 @@
                         style="@style/text_style_default"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="@dimen/default_margin_start_size"
                         app:layout_constraintBaseline_toBaselineOf="@+id/product_price_id"
                         app:layout_constraintStart_toEndOf="@+id/product_price_id"
-                        tools:text="219" />
+                        tools:text="@string/tools_product_price" />
 
                     <TextView
                         android:id="@+id/product_delivery_info_id"
@@ -183,16 +183,16 @@
                         app:layout_constraintBottom_toTopOf="@+id/product_price_id"
                         app:layout_constraintEnd_toEndOf="@+id/product_price_info_id"
                         app:layout_constraintStart_toStartOf="@+id/product_price_id"
-                        tools:text="from 350"
+                        tools:text="@string/tools_former_product_price"
                         tools:visibility="visible" />
 
                     <ImageButton
                         android:id="@+id/buy_image_button_id"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="@dimen/margin_horizontal_end_default_size"
                         android:layout_marginBottom="8dp"
-                        android:minHeight="48dp"
+                        android:minHeight="@dimen/min_height_image_button"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:srcCompat="@drawable/ic_baseline_add_shopping_cart"
