@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:iconifiedByDefault="false"
+        android:queryHint="@string/search_for_product"
         android:background="@drawable/search_bar_background_shape"
         app:layout_constraintBottom_toTopOf="@+id/product_recycler_view_id"
         app:layout_constraintEnd_toEndOf="parent"

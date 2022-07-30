@@ -38,6 +38,8 @@ class ProductsPagingSource @Inject constructor(private val repository: ProductRe
             LoadResult.Error(exception)
         } catch (exception: HttpException){
             LoadResult.Error(exception)
+        } catch (exception: NullPointerException){
+            LoadResult.Error(exception)
         }
     }
 }
