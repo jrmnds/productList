@@ -2,13 +2,15 @@ package com.jrmnds.productlist.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jrmnds.productlist.databinding.PageStateItemBinding
 
-class ProductLoadStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
+class PageLoadStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>(){
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -44,4 +46,5 @@ class ProductLoadStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
     private fun PageStateItemBinding.isErrorState(loadState: LoadState) {
         errorMsg.isVisible = loadState is LoadState.Error
     }
+
 }

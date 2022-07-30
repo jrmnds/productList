@@ -20,6 +20,7 @@ class ProductListViewModel @Inject constructor(private val repository: ProductRe
     val productListPagingFlow: Flow<PagingData<Product>>
         get() = _productListPagingFlow
 
+
     init {
         getProductPaging()
     }
@@ -30,9 +31,22 @@ class ProductListViewModel @Inject constructor(private val repository: ProductRe
         }
     }
 
+    fun getProductPagingByNameList(productName: String?){
+        viewModelScope.launch {
+            _productListPagingFlow = getProductPagingByName(productName).cachedIn(viewModelScope)
+        }
+    }
+
+   private fun getProductPagingByName(productName: String?): Flow<PagingData<Product>>{
+        return Pager(PagingConfig(pageSize = 20)){
+            ProductsPagingSource(repository, productName)
+        }.flow
+    }
+
+
     private fun getPagingProductList(): Flow<PagingData<Product>> {
         return Pager(PagingConfig(pageSize = 20)) {
-            ProductsPagingSource(repository)
+            ProductsPagingSource(repository, null)
         }.flow
     }
 }

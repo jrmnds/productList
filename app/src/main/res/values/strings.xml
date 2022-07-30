@@ -8,4 +8,6 @@
     <string name="promotion">Promotion</string>
     <string name="delivered_tomorrow">Delivered Tomorrow</string>
     <string name="internet_connection_error">Sorry, it seems that you\'re without internet connection.\n Please, try again later.</string>
+    <string name="add_to_card_button">Add to card button</string>
+    <string name="product_image">Product Image</string>
 </resources>

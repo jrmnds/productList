@@ -1,8 +1,11 @@
 package com.jrmnds.productlist.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -12,7 +15,7 @@ import com.jrmnds.productlist.databinding.ProductItemBinding
 import com.jrmnds.productlist.domain.model.Product
 import com.jrmnds.productlist.domain.model.PromoIcon
 
-class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCallback){
+class ProductAdapter: PagingDataAdapter<Product, RecyclerView.ViewHolder>(DiffCallback) {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val product: Product = getItem(position)!!

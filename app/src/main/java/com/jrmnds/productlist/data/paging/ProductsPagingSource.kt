@@ -1,16 +1,19 @@
 package com.jrmnds.productlist.data.paging
 
-import android.util.Log
+
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.jrmnds.productlist.common.Constants.STARTING_KEY
+import com.jrmnds.productlist.domain.model.PageInfo
+
 import com.jrmnds.productlist.domain.model.Product
 import com.jrmnds.productlist.domain.repository.ProductRepository
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class ProductsPagingSource @Inject constructor(private val repository: ProductRepository) : PagingSource<Int, Product>(){
+class ProductsPagingSource @Inject constructor(private val repository: ProductRepository,
+                                               private val productName: String?) : PagingSource<Int, Product>(){
 
     override fun getRefreshKey(state: PagingState<Int, Product>): Int = STARTING_KEY
 
@@ -19,9 +22,13 @@ class ProductsPagingSource @Inject constructor(private val repository: ProductRe
 
         return try {
             val response = repository.getProducts(pageNumber).toPageInfo()
-            val productList = response.productList
+            var productList = response.productList
+            if(productName != null){
+               productList = productList.filter { product ->
+                    product.productName.contains(productName, ignoreCase = true)
+                }
+            }
             val pageCount = response.pageCount
-
             LoadResult.Page(
                 data = productList,
                 prevKey = null,
