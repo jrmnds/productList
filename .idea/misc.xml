@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/rect_primary_color_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/rect_secondaty_color_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/search_bar_background_shape.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout-v26/product_item.xml" value="0.28804347826086957" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/erro_page_loader.xml" value="0.4829781573751698" />
+        <entry key="app/src/main/res/layout/fragment_product_list.xml" value="0.2894880767561432" />
+        <entry key="app/src/main/res/layout/page_state_item.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/product_item.xml" value="0.4474090576171875" />
+        <entry key="app/src/main/res/layout/retail_choice.xml" value="0.5171286320340807" />
+        <entry key="app/src/main/res/layout/retail_promotion.xml" value="0.24739583333333334" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.30833333333333335" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

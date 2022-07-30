@@ -2,4 +2,20 @@
     <string name="app_name">Product List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="reviews">Reviews</string>
+    <string name="price">Price:</string>
+    <string name="coolblue_s_n_choice">CoolBlue\'s \n Choice</string>
+    <string name="promotion">Promotion</string>
+    <string name="delivered_tomorrow">Delivered Tomorrow</string>
+    <string name="internet_connection_error">Sorry, it seems that you\'re without internet connection.\n Please, try again later.</string>
+    <string name="add_to_card_button">Add to card button</string>
+    <string name="product_image">Product Image</string>
+    <string name="search_for_product">Search for a Product</string>
+    <string name="tools_product_title">Apple TV 4K 64GB</string>
+    <string name="tools_review_count">116</string>
+    <string name="tools_product_labels">4K (3840 x 2160), \n Geschikt voor Netflix, \n iTunes en Apple Music, \n App voor iOS</string>
+    <string name="tools_former_product_price">from 350</string>
+    <string name="tools_product_price">219</string>
+    <string name="coolsblue_choice_compare">coolblues-choice</string>
+    <string name="action_price_compare">action-price</string>
 </resources>
