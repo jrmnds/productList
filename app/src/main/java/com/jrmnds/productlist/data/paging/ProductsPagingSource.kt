@@ -15,14 +15,18 @@ import javax.inject.Inject
 class ProductsPagingSource @Inject constructor(private val repository: ProductRepository,
                                                private val productName: String?) : PagingSource<Int, Product>(){
 
+    private lateinit var pageInfo: PageInfo
+    private lateinit var productList: List<Product>
+
     override fun getRefreshKey(state: PagingState<Int, Product>): Int = STARTING_KEY
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Product> {
         val pageNumber = params.key?: STARTING_KEY
 
         return try {
-            val response = repository.getProducts(pageNumber).toPageInfo()
-            var productList = response.productList
+            pageInfo = repository.getProducts(pageNumber).toPageInfo()
+            productList = pageInfo.productList
+
             when {
                 productName != null -> {
                     productList = productList.filter { product ->
@@ -30,7 +34,8 @@ class ProductsPagingSource @Inject constructor(private val repository: ProductRe
                     }
                 }
             }
-            val pageCount = response.pageCount
+
+            val pageCount = pageInfo.pageCount
             LoadResult.Page(
                 data = productList,
                 prevKey = null,
