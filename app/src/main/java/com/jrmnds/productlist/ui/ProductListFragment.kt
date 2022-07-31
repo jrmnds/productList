@@ -35,8 +35,10 @@ class ProductListFragment : Fragment() {
         viewModel = ViewModelProvider(this)[ProductListViewModel::class.java]
         productAdapter = ProductAdapter()
         productLoadStateAdapter = PageLoadStateAdapter()
+
         configureRecycle()
         observeState()
+
         return binding.root
     }
 
